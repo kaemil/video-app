@@ -1,0 +1,335 @@
+body {
+  margin: 0;
+}
+
+.video {
+  display: -ms-grid;
+  display: grid;
+}
+
+.video__searchBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px;
+}
+
+.video__searchBar > input {
+  height: 40px;
+  padding: 0;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-bottom: 10px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.video__searchBar > div {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.video__searchBar--buttons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  gap: 10px;
+  width: 300px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.video__searchBar--buttons > button {
+  height: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.video__optionBar {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (25%)[4];
+      grid-template-columns: repeat(4, 25%);
+}
+
+.video__footer {
+  height: 20px;
+}
+
+.video__tileDisplay {
+  margin: 20px;
+  margin-top: 70px;
+  display: -ms-grid;
+  display: grid;
+  gap: 20px;
+}
+
+.video__listDisplay {
+  margin: 20px;
+  margin-top: 70px;
+  display: -ms-grid;
+  display: grid;
+  gap: 20px;
+}
+
+.video__pagination {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  display: -ms-grid;
+  display: grid;
+  border: 1px solid #0d6efd;
+}
+
+.card__views {
+  margin: 5px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+.card__views > p {
+  margin: 5px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.card__footer {
+  margin-top: 5px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 25% 25%;
+      grid-template-columns: 50% 25% 25%;
+}
+
+.card__footer > div {
+  font-size: 14px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.card__footer > button {
+  outline: none;
+  border: none;
+}
+
+.list {
+  display: -ms-grid;
+  display: grid;
+  border: 1px solid #0d6efd;
+}
+
+.list__views {
+  margin: 5px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+.list__views > p {
+  margin: 5px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.list__footer {
+  margin-top: 5px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 25% 25%;
+      grid-template-columns: 50% 25% 25%;
+}
+
+.list__footer > div {
+  font-size: 14px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.list__footer > button {
+  outline: none;
+  border: none;
+}
+
+.card > p {
+  text-align: left;
+  text-overflow: ellipsis;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 5px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.card > img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.list > p {
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 5px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.list > img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+}
+
+.card-text {
+  text-align: center;
+  padding-left: 10px;
+}
+
+@media (min-width: 500px) {
+  .video__tileDisplay {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .video__listDisplay {
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .video__searchBar {
+    min-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .video__optionBar {
+    gap: 20px;
+    width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .list-img {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: img;
+  }
+  .list-text {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: title;
+  }
+  .list__views {
+    padding-left: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: data;
+  }
+  .list__views > p {
+    text-align: left;
+  }
+  .list__footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 4;
+    grid-area: footer;
+    margin: 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .list__footer > div {
+    margin-top: 10px;
+  }
+  .list {
+    -ms-grid-columns: 1fr 1fr 1fr 100px;
+        grid-template-columns: 1fr 1fr 1fr 100px;
+        grid-template-areas: 'img title title footer' 'img data data footer';
+  }
+  .list > img {
+    height: 100%;
+    width: 100%;
+  }
+  .list > p {
+    text-align: left;
+    padding-left: 10px;
+  }
+}
+
+@media (min-width: 700px) {
+  .video__tileDisplay {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .video__listDisplay {
+    width: 700px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .video__tileDisplay {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+  .video__listDisplay {
+    width: 900px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .video__tileDisplay {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+/*# sourceMappingURL=style.css.map */
