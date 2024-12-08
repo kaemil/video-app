@@ -1,40 +1,50 @@
-import React from 'react';
-import { Button, Input } from 'reactstrap';
+import { Button, Flex, Input, Row } from 'antd';
+import { useState } from 'react';
 
-function SearchBar({
-	url,
-	handleClick,
-	handleChange,
-	handleSource,
-	selectSource,
-}) {
-	return (
-		<div className="video__searchBar">
-			<Input
-				name="URL"
-				value={url}
-				placeholder="input youtube/vimeo url..."
-				onChange={handleChange}
-			/>
-			<div className="video__searchBar--buttons">
-				<Input
-					value={selectSource}
-					onChange={handleSource}
-					id="exampleSelect"
-					name="select"
-					type="select"
-				>
-					<option value="selectSource">Select source</option>
-					<option value="youtube">YouTube</option>
-					<option value="vimeo">Vimeo</option>
-				</Input>
+import useGetYouTubeVideo from '../hooks/useGetYouTubeVideo';
 
-				<Button color="primary" onClick={handleClick}>
-					Add Video
-				</Button>
-			</div>
-		</div>
-	);
-}
+const SearchBar = () => {
+  const [url, setUrl] = useState('');
+  const [apiKey, setApiKey] = useState('');
+
+  const { isLoading, getYouTubeVideo } = useGetYouTubeVideo({ setUrl, apiKey });
+
+  const handleUrlChange = ({ target: { value } }) => setUrl(value);
+  const handleApiKey = ({ target: { value } }) => setApiKey(value);
+
+  return (
+    <Flex justify="center" align="center" vertical gap={16}>
+      <Row>
+        Only for show up purpose enter YouTube API KEY to make successful API
+        request. First 5 vidoes are hardcoded.
+      </Row>
+      <Input
+        className="menu-input"
+        allowClear
+        value={apiKey}
+        placeholder="Youtube API key..."
+        onChange={handleApiKey}
+      />
+      <Input
+        allowClear
+        className="menu-input"
+        disabled={isLoading}
+        disable={isLoading}
+        value={url}
+        placeholder="Youtube url..."
+        onChange={handleUrlChange}
+      />
+      <Button
+        loading={isLoading}
+        color="primary"
+        variant="solid"
+        disabled={!url}
+        onClick={() => getYouTubeVideo(url)}
+      >
+        Add Video
+      </Button>
+    </Flex>
+  );
+};
 
 export default SearchBar;

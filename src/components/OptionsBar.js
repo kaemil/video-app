@@ -1,61 +1,84 @@
-import React, { useState } from 'react';
+import { Button, Flex, Popconfirm, Tooltip } from 'antd';
+import React from 'react';
 import {
-	Button,
-	Dropdown,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem,
-} from 'reactstrap';
+  UnorderedListOutlined,
+  TableOutlined,
+  SortAscendingOutlined,
+  SortDescendingOutlined,
+  StarOutlined,
+  StarFilled,
+} from '@ant-design/icons';
 
-function OptionsBar({
-	handleDelete,
-	handleFavourite,
-	handleShowAll,
-	handleSortUp,
-	handleSortDown,
-   handleTile,
-   handleList
-}) {
-	const [toggleDisplay, setToggleDisplay] = useState(false);
-	const [toggleFavourite, setToggleFavourite] = useState(false);
-	const [toggleSort, setToggleSort] = useState(false);
-   
-   // Managing toggles
-	const togDisplay = () => {
-		setToggleDisplay(!toggleDisplay);
-	};
-	const togFavourite = () => {
-		setToggleFavourite(!toggleFavourite);
-	};
-	const togSort = () => {
-		setToggleSort(!toggleSort);
-	};
-	return (
-		<div className="video__optionBar">
-			<Dropdown  isOpen={toggleDisplay} toggle={togDisplay}>
-				<DropdownToggle color="primary" caret>Display</DropdownToggle>
-				<DropdownMenu>
-					<DropdownItem onClick={handleTile}>Display Tile</DropdownItem>
-					<DropdownItem onClick={handleList}>Display List</DropdownItem>
-				</DropdownMenu>
-			</Dropdown>
-			<Dropdown isOpen={toggleFavourite} toggle={togFavourite}>
-				<DropdownToggle color="primary" caret>Show</DropdownToggle>
-				<DropdownMenu >
-					<DropdownItem onClick={handleFavourite}>Show favourite</DropdownItem>
-					<DropdownItem onClick={handleShowAll}>Show all</DropdownItem>
-				</DropdownMenu>
-			</Dropdown>
-			<Dropdown isOpen={toggleSort} toggle={togSort}>
-				<DropdownToggle color="primary" caret>Sort</DropdownToggle>
-				<DropdownMenu>
-					<DropdownItem onClick={handleSortUp}>Sort up</DropdownItem>
-					<DropdownItem onClick={handleSortDown}>Sort down</DropdownItem>
-				</DropdownMenu>
-			</Dropdown>
-			<Button color="primary"  onClick={handleDelete}>Clear</Button>
-		</div>
-	);
-}
+import { SORTERS, VIDEOS_LAYOUTS } from '../consts';
+
+const { GRID, LIST } = VIDEOS_LAYOUTS;
+const { UP, DOWN } = SORTERS;
+
+const OptionsBar = ({
+  sorter,
+  handleSorter,
+  showFavourite,
+  handleFavourite,
+  videosLayout,
+  handleVideosLayout,
+  handleDelete,
+}) => {
+  const getVariant = (boolen) => (boolen ? 'solid' : 'outlined');
+
+  return (
+    <Flex justify="center" gap={8}>
+      <Tooltip title="Grid">
+        <Button
+          variant={getVariant(videosLayout === GRID)}
+          color="primary"
+          icon={<TableOutlined />}
+          onClick={() => handleVideosLayout(GRID)}
+        />
+      </Tooltip>
+      <Tooltip title="List">
+        <Button
+          variant={getVariant(videosLayout === LIST)}
+          color="primary"
+          icon={<UnorderedListOutlined />}
+          onClick={() => handleVideosLayout(LIST)}
+        />
+      </Tooltip>
+      <Tooltip title="Liked">
+        <Button
+          variant={getVariant(showFavourite)}
+          color="primary"
+          icon={showFavourite ? <StarFilled /> : <StarOutlined />}
+          onClick={handleFavourite}
+        >
+          Liked
+        </Button>
+      </Tooltip>
+      <Tooltip title="Sort ascend">
+        <Button
+          variant={getVariant(sorter === UP)}
+          color="primary"
+          icon={<SortAscendingOutlined />}
+          onClick={() => handleSorter(UP)}
+        />
+      </Tooltip>
+      <Tooltip title="Sort descend">
+        <Button
+          variant={getVariant(sorter === DOWN)}
+          color="primary"
+          icon={<SortDescendingOutlined />}
+          onClick={() => handleSorter(DOWN)}
+        />
+      </Tooltip>
+      <Popconfirm
+        onConfirm={handleDelete}
+        title="Are you sure you want to clear all saved videos?"
+      >
+        <Button color="primary" variant="outlined">
+          Clear All
+        </Button>
+      </Popconfirm>
+    </Flex>
+  );
+};
 
 export default OptionsBar;
