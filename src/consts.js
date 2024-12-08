@@ -1,7 +1,7 @@
 // Clear before upload
 export const YOUTUBE_API_KEY = '';
 
-export const YOUTUBE_EMBED_URL = 'http://www.youtube.com/embed/';
+export const YOUTUBE_EMBED_URL = 'https://www.youtube.com/embed/';
 
 export const API_YOUTUBE_VIDEO =
   'https://youtube.googleapis.com/youtube/v3/videos';
