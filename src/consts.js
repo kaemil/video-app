@@ -59,14 +59,4 @@ export const DATA_HARDCODE = [
     thumbnail: 'https://i.ytimg.com/vi/LDU_Txk06tM/hqdefault.jpg',
     liked: true,
   },
-  {
-    id: 'c3fbd47b-fa26-45c3-b127-cef016626eff',
-    videoId: 'Gc71AmT_b2k',
-    views: 212945523,
-    likes: 3323082,
-    title: 'Bazzi - Mine [Official Music Video]',
-    date: '8-12-2024',
-    thumbnail: 'https://i.ytimg.com/vi/Gc71AmT_b2k/maxresdefault.jpg',
-    liked: false,
-  },
 ];

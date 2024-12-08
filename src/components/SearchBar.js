@@ -16,7 +16,7 @@ const SearchBar = () => {
     <Flex justify="center" align="center" vertical gap={16}>
       <Row>
         Only for show up purpose enter YouTube API KEY to make successful API
-        request. First 5 vidoes are hardcoded.
+        request. First 4 vidoes are hardcoded.
       </Row>
       <Input
         className="menu-input"
