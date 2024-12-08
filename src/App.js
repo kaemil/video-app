@@ -14,7 +14,7 @@ import readFromLocalStorage from './utils/readFromLocalStorage';
 import saveToLocalStorage from './utils/saveToLocalStorage';
 import getPaginatedData from './utils/getPaginatedData';
 
-import { SORTERS, VIDEOS_LAYOUTS } from './consts';
+import { DATA_HARDCODE, SORTERS, VIDEOS_LAYOUTS } from './consts';
 
 import './css/style.css';
 
@@ -30,7 +30,7 @@ const App = () => {
   const pagination = usePagination({ total: videos.length });
 
   useEffect(() => {
-    const videos = readFromLocalStorage('videos') || [];
+    const videos = readFromLocalStorage('videos') || DATA_HARDCODE || [];
     setVideos(videos);
   }, []);
 

@@ -11,10 +11,8 @@ const VideoContainer = ({ videosLayout, videos }) => {
   if (videosLayout === LIST) {
     return (
       <Flex className="videos-list-wrapper">
-        {videos.map((video, index) => (
-          <>
-            <VideoList key={video.id} video={video} />
-          </>
+        {videos.map((video) => (
+          <VideoList key={video.id} video={video} />
         ))}
       </Flex>
     );

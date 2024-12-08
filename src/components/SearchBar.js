@@ -29,7 +29,6 @@ const SearchBar = () => {
         allowClear
         className="menu-input"
         disabled={isLoading}
-        disable={isLoading}
         value={url}
         placeholder="Youtube url..."
         onChange={handleUrlChange}

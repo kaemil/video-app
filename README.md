@@ -18,14 +18,4 @@ This project was created to practice React, java script functions, CSS formattin
 
 **Link:**
 
-To proper work app requires access tokes form Youtube Api which are for safety reason not for public.
-
-![Screenshot](screenshot/1.png)
-
-![Screenshot](screenshot/2.png)
-
-![Screenshot](screenshot/3.png)
-
-![Screenshot](screenshot/4.png)
-
-![Screenshot](screenshot/5.png)
+To proper work app requires access tokes form Youtube Api.
