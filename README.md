@@ -19,3 +19,5 @@ This project was created to practice React, java script functions, CSS formattin
 **Link:**
 
 To proper work app requires access tokes form Youtube Api.
+
+https://kaemil.github.io/video-app/
